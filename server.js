@@ -1,5 +1,8 @@
 const express = require("express");
 const app = express();
+const jwt = require("jsonwebtoken");
+
+app.use(express.json());
 
 const posts = [
   { usename: "Kyle", title: "Post 1" },
@@ -7,7 +10,13 @@ const posts = [
 ];
 
 app.get("/posts", (req, res) => {
-    res.json(posts)
+  res.json(posts);
+});
+
+app.get("/login", (req, res) => {
+  //Authenticate User
+
+  const username = req.body.usename;
 });
 
 app.listen(3000);
