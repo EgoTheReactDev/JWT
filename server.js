@@ -6,6 +6,8 @@ const posts = [
   { usename: "Jim", title: "Post 2" },
 ];
 
-app.get("/posts", (req, res) => {});
+app.get("/posts", (req, res) => {
+    res.json(posts)
+});
 
 app.listen(3000);
